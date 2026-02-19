@@ -173,6 +173,31 @@ border-top:1px solid #333;
 </div> 
 
 <div class="section">
+<h2>Share My Visiting Card</h2>
+
+    <input type="text" id="shareNumber" placeholder="Enter WhatsApp Number" style="padding:10px; width:250px; border-radius:8px; border:none; margin:10px;">
+
+    <button onclick="shareCard()" style="padding:10px 20px; border:none; border-radius:8px; background:#25D366; color:white; cursor:pointer;">
+        📤 Share via WhatsApp
+    </button>
+</div>
+
+<script>
+function shareCard() {
+    var number = document.getElementById("shareNumber").value.replace("+91","").replace(/\s/g,"");
+    
+    if(number === "") {
+        alert("Please enter mobile number");
+        return;
+    }
+
+    var message = "Hello 👋,\n\nThis is Kampli Associates.\nHere is our digital visiting card:\nhttps://kampliassociates.in";
+
+    var whatsappURL = "https://wa.me/91" + number + "?text=" + encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+}
+</script>
 <h2>Product Categories</h2>
 <div class="products">
 <div class="product-box"><i data-lucide="zap"></i>Welding Machines</div>
@@ -240,6 +265,7 @@ lucide.createIcons();
 </body>
 
 </html>
+
 
 
 
