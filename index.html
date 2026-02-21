@@ -12,7 +12,7 @@
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#0f0f0f,#1c1c1c);
+background:#0d0d0d;
 color:white;
 text-align:center;
 }
@@ -53,14 +53,33 @@ font-weight:600;
 transition:0.3s;
 }
 
-.call{background:#1e88e5;color:white;}
-.whatsapp{background:#25D366;color:white;}
-.location{background:#ff6f00;color:white;}
-.product{background:#6f42c1;color:white;}
+.call{
+background:#111;
+border:1px solid #f5b642;
+color:#f5b642;
+}
+
+.whatsapp{
+background:#111;
+border:1px solid #25D366;
+color:#25D366;
+}
+
+.location{
+background:#111;
+border:1px solid #ff6f00;
+color:#ff6f00;
+}
+
+.product{
+background:#f5b642;
+color:black;
+font-weight:700;
+}
 
 .buttons a:hover{
-transform:scale(1.03);
-opacity:0.9;
+transform:translateY(-4px);
+box-shadow:0 8px 20px rgba(0,0,0,0.6);
 }
 
 .section{
@@ -70,6 +89,8 @@ margin-top:55px;
 h2{
 color:#f5b642;
 margin-bottom:25px;
+letter-spacing:1px;
+text-shadow:0 0 8px rgba(245,182,66,0.4);
 }
 
 /* CLICKABLE PRODUCT GRID */
@@ -291,5 +312,6 @@ lucide.createIcons();
 
 </body>
 </html>    
+
 
 
