@@ -198,6 +198,21 @@ border-top:1px solid #333;
 <a href="product-list.pdf" target="_blank" class="product">📄 Download Product List</a>
 <a href="kampli-associates.vcf" download class="product">💾 Save Contact</a>
 </div> 
+<!-- SHARE DIGITAL CARD -->
+<div class="section">
+<h2>Share My Visiting Card</h2>
+
+<input type="text" id="shareNumber" placeholder="Enter Mobile Number"
+style="padding:12px; width:260px; border-radius:8px; border:none; margin:10px;">
+
+<br>
+
+<button onclick="shareCard()"
+style="padding:12px 20px; border:none; border-radius:8px; background:#25D366; color:white; cursor:pointer;">
+📤 Share via WhatsApp
+</button>
+
+</div>
 <!-- SOCIAL MEDIA -->
 <div class="section">
 <h2>Follow Us</h2>
@@ -315,12 +330,26 @@ document.getElementById("imagePopup").style.display="flex";
 function closeImage(){
 document.getElementById("imagePopup").style.display="none";
 }
+function shareCard() {
+    var number = document.getElementById("shareNumber").value.replace(/\D/g, "");
 
+    if(number.length !== 10) {
+        alert("Please enter valid 10-digit mobile number");
+        return;
+    }
+
+    var message = "Hello 👋,\n\nThis is Kampli Associates.\nHere is our digital visiting card:\nhttps://kampliassociates.in";
+
+    var whatsappURL = "https://wa.me/91" + number + "?text=" + encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+}
 lucide.createIcons();
 </script>
 
 </body>
 </html>    
+
 
 
 
